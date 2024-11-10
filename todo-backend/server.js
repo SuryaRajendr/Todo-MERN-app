@@ -1,8 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 const app = express();
 app.use(express.json())
+app.use(cors())
 
 
 app.get('/',(req,res) => {
@@ -102,7 +104,7 @@ app.delete('/todos/:id', async(req,res) => {
     }
 })
 
-const port = 3000;
+const port = 8000;
 app.listen(port, () =>{
     console.log("The server is listening", port)
 })
